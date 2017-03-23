@@ -14,6 +14,7 @@
 		CE47E4EC1E686DEA003F8B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE47E4EB1E686DEA003F8B70 /* Assets.xcassets */; };
 		CE47E4EF1E686DEA003F8B70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE47E4ED1E686DEA003F8B70 /* LaunchScreen.storyboard */; };
 		CE47E4FA1E686DEC003F8B70 /* TinkoffChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47E4F91E686DEC003F8B70 /* TinkoffChatTests.swift */; };
+		CE972BC41E82DBC30000DFC5 /* Chats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE972BC31E82DBC30000DFC5 /* Chats.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		CE47E4F51E686DEC003F8B70 /* TinkoffChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinkoffChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE47E4F91E686DEC003F8B70 /* TinkoffChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffChatTests.swift; sourceTree = "<group>"; };
 		CE47E4FB1E686DEC003F8B70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE972BC31E82DBC30000DFC5 /* Chats.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chats.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				CE47E4ED1E686DEA003F8B70 /* LaunchScreen.storyboard */,
 				CE47E4F01E686DEA003F8B70 /* Info.plist */,
 				CE47E4E81E686DEA003F8B70 /* TinkoffChat.xcdatamodeld */,
+				CE972BC31E82DBC30000DFC5 /* Chats.storyboard */,
 			);
 			path = TinkoffChat;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			files = (
 				CE47E4EF1E686DEA003F8B70 /* LaunchScreen.storyboard in Resources */,
 				CE47E4EC1E686DEA003F8B70 /* Assets.xcassets in Resources */,
+				CE972BC41E82DBC30000DFC5 /* Chats.storyboard in Resources */,
 				CE47E4E71E686DE9003F8B70 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +418,7 @@
 				CE47E5001E686DEC003F8B70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE47E5011E686DEC003F8B70 /* Build configuration list for PBXNativeTarget "TinkoffChatTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +427,7 @@
 				CE47E5031E686DEC003F8B70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

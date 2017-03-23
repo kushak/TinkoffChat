@@ -8,10 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     @IBOutlet weak var textColor: UILabel!
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var aboutUser: UITextView!
+    @IBOutlet weak var imageUser: UIButton!
     
     private var tapCounter = 0
     //между вьюдидлоад и вьювилэпир высчитываются кострейны ВАЖНЫЙ ВОПРОС) 
@@ -22,11 +24,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     //большой круг срабатывает, когда мы ушли с экрана 
     //Память работает через референс каунт, а не через гербежколлектор; ARC - automaticRefenceCount
     //retainCycle - прочитать, два объекта ссылаются друг на друга и висят в памяти, хотя на них нет ссылок
-    
+
+    // MARK: LifeCycleVC
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("\(#function)")
         self.controlsSayDescription()
-        print("\(#function)\n\n\n")
         
         //добавили жест при котором будет скрываться клавиатура (нажатие в свободное место)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.onTapAction))
@@ -38,50 +41,83 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print("\(#function)")
         self.controlsSayDescription()
-        print("\(#function)\n\n\n")
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        print("\(#function)")
         self.controlsSayDescription()
-        print("\(#function)\n\n\n")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        print("\(#function)")
         self.controlsSayDescription()
-        print("\(#function)\n\n\n")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        print("\(#function)")
         self.controlsSayDescription()
-        print("\(#function)\n\n\n")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        print("\(#function)")
         self.controlsSayDescription()
-        print("\(#function)\n\n\n")
+        
     }
     
-    func onTapAction() {
-        view.endEditing(true)
+    //MARK: UIImagePickerControllerDelegate
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        //ТУТ КАКИЕ-ТО ПРЕДУПРЕЖДЕНИЯ ВЫСКАКИВАЮТ, одно когда галлерею вызываем, другая ругается на формат картинки, но вроде все работает // ???
+        
+        if let pickedImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+            imageUser.setImage(pickedImage, for: UIControlState.normal)
+            picker.dismiss(animated: true, completion: nil)
+        }
     }
     
-    func controlsSayDescription() {
-        print(self.textColor.description)
-        print(self.userName.description)
-        print(self.aboutUser.description)
-    }
-
+    // MARK: Actions
     @IBAction func saveAction(_ sender: Any) {
         print("Сохранение данных профиля");
     }
 
     @IBAction func colorAction(_ sender: UIButton) {
-        self.textColor.backgroundColor = sender.backgroundColor
+        self.textColor.textColor = sender.backgroundColor
+    }
+    
+    @IBAction func imageAction(_ sender: UIButton) {
+        let alertController = UIAlertController(title: nil,
+                                                message: "Добавить фото",
+                                                preferredStyle: .actionSheet)
+        let oneAction = UIAlertAction(title: "Галерея", style: .default) { _ in
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
+            
+        }
+        let twoAction = UIAlertAction(title: "Камера", style: .default) { _ in
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        let threeAction = UIAlertAction(title: "Назад", style: .default) { _ in }
+        
+        alertController.addAction(oneAction)
+        alertController.addAction(twoAction)
+        alertController.addAction(threeAction)
+
+        self.present(alertController, animated: true) { }
+    }
+    
+    func onTapAction() {
+        view.endEditing(true)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -89,6 +125,16 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
         return true
     }
     
-//    func textView
+    func controlsSayDescription() {
+        for view in view.subviews {
+            print("\(view.classForCoder) frame: \(view.frame)")
+        }
+        print("\n\n")
+    }
 }
+
+//Таблицы 
+// таблица стиля плей - хедер и футер не уезжают / плейн - скролятся, как обычные строки
+// table.view.rowHeight = UITableViewAutomaticDimension - считает автоматически, table.view.estimatedRowHeight = 44 - для автоматического расчета высоты ячеек приблизительное значение
+// метод таблевью естимейтХайтФоРоуАт - говорит какой высоты должна быть ячеек
 
