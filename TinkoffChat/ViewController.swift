@@ -72,9 +72,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
     
     //MARK: UIImagePickerControllerDelegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        //ТУТ КАКИЕ-ТО ПРЕДУПРЕЖДЕНИЯ ВЫСКАКИВАЮТ, одно когда галлерею вызываем, другая ругается на формат картинки, но вроде все работает // ???
-        
         if let pickedImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
             imageUser.setImage(pickedImage, for: UIControlState.normal)
             picker.dismiss(animated: true, completion: nil)
@@ -83,7 +80,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
     
     // MARK: Actions
     @IBAction func saveAction(_ sender: Any) {
-        print("Сохранение данных профиля");
+        print("Сохранение данных профиля")
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func colorAction(_ sender: UIButton) {
@@ -99,7 +97,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
             imagePicker.delegate = self
             imagePicker.sourceType = .photoLibrary
             self.present(imagePicker, animated: true, completion: nil)
-            
         }
         let twoAction = UIAlertAction(title: "Камера", style: .default) { _ in
             let imagePicker = UIImagePickerController()
