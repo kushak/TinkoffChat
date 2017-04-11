@@ -9,6 +9,14 @@
 import UIKit
 
 class Message: NSObject {
+    
+    var forUser: String?
     var text: String?
     var isInputMessage: Bool?
+    var date: Date?
+    
+    init(text: String?, isInputMessage: Bool) {
+        self.text = text
+        self.isInputMessage = isInputMessage
+    }
 }

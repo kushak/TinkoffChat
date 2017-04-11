@@ -15,33 +15,55 @@ class ConverstionListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        loadConservations()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        registerForComunicatorManager()
+        getConservations()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        registerForComunicatorManager()
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+        super.viewDidDisappear(animated)
+    }
+    
+    func registerForComunicatorManager() {
+        NotificationCenter.default.addObserver(self, selector: #selector(foundUser), name: NSNotification.Name(rawValue: "didFoundUser"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(lostUser), name: NSNotification.Name(rawValue: "didLostUser"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveMessage(_:)), name: NSNotification.Name(rawValue: "didReceiveMessage"), object: nil)
+    }
+    
+    func foundUser() {
+        getConservations()
+    }
+    
+    func lostUser() {
+        getConservations()
+    }
+    
+    func receiveMessage(_ notification: NSNotification){
+        let text = notification.userInfo?["text"] as! String
+        let forConversation = notification.userInfo?["user"] as! String
+        for conversation in conversationsOnline {
+            if conversation.name! == forConversation {
+                let message = Message(text: text, isInputMessage: true)
+                message.date = Date.init(timeIntervalSinceNow: 0)
+                conversation.messages.append(message)
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
 
-    func loadConservations() {
-        var conversations = [Conversation]()
-        for i in 0..<20 {
-            let conversation = Conversation()
-            conversation.name = "User Name \(i)"
-            conversation.message = "test message"
-            conversation.date = Date.init(timeIntervalSinceNow: 0)
-            conversation.online = Int(arc4random()) % 2 == 0 ? true:false
-            conversation.hasUnreadMessage = Int(arc4random()) % 2 == 0 ? true:false
-            conversations.append(conversation)
-        }
-        
-        for conversation in conversations {
-            if conversation.online! {
-                conversationsOnline.append(conversation)
-            } else {
-                conversationsOffline.append(conversation)
-            }
+    func getConservations() {
+//        conversationsOnline = CommunicationManager.sharedInstance.getPeers()
+        DispatchQueue.main.async {
+            self.conversationsOnline = CommunicationManager.sharedInstance.getPeers()
+            self.tableView.reloadData()
         }
     }
     
@@ -63,6 +85,7 @@ class ConverstionListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? ConversationListCell{
+            print(indexPath)
             cell.fillWithModel(model:
                 indexPath.section == 0 ? conversationsOnline[indexPath.row]:conversationsOffline[indexPath.row])
             cell.initControls()
@@ -81,7 +104,7 @@ class ConverstionListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = UIStoryboard.init(name: "Conversation", bundle: nil).instantiateViewController(withIdentifier: "Conversation") as? ConversationViewController {
-            vc.userName = indexPath.section == 0 ? conversationsOnline[indexPath.row].name:conversationsOffline[indexPath.row].name
+            vc.conversation = indexPath.section == 0 ? conversationsOnline[indexPath.row]:conversationsOffline[indexPath.row]
             show(vc, sender: nil)
         }
     }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CE00DCBD1E940C3B00086BAA /* OperationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00DCBC1E940C3B00086BAA /* OperationDataManager.swift */; };
+		CE00DCC51E95454E00086BAA /* File in Resources */ = {isa = PBXBuildFile; fileRef = CE00DCC41E95454E00086BAA /* File */; };
+		CE00DCC71E954EEF00086BAA /* Chalenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00DCC61E954EEF00086BAA /* Chalenge.swift */; };
 		CE27102F1E8969F90077850D /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27102E1E8969F90077850D /* ConversationViewController.swift */; };
 		CE2710311E896A220077850D /* Conversation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE2710301E896A220077850D /* Conversation.storyboard */; };
 		CE2710331E8973EB0077850D /* MessageCellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2710321E8973EB0077850D /* MessageCellConfiguration.swift */; };
@@ -23,6 +25,9 @@
 		CE47E4EC1E686DEA003F8B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE47E4EB1E686DEA003F8B70 /* Assets.xcassets */; };
 		CE47E4EF1E686DEA003F8B70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE47E4ED1E686DEA003F8B70 /* LaunchScreen.storyboard */; };
 		CE47E4FA1E686DEC003F8B70 /* TinkoffChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47E4F91E686DEC003F8B70 /* TinkoffChatTests.swift */; };
+		CE6DB3DE1E96A642008DBF59 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6DB3DD1E96A642008DBF59 /* UserProfile.swift */; };
+		CE6DB3EF1E98B7D4008DBF59 /* MultipeerCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6DB3EE1E98B7D4008DBF59 /* MultipeerCommunicator.swift */; };
+		CE6DB3F11E98C156008DBF59 /* CommunicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6DB3F01E98C156008DBF59 /* CommunicationManager.swift */; };
 		CE972BC41E82DBC30000DFC5 /* ConversationsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE972BC31E82DBC30000DFC5 /* ConversationsList.storyboard */; };
 		CE972BC61E87C8660000DFC5 /* ConverstionListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE972BC51E87C8650000DFC5 /* ConverstionListTableViewController.swift */; };
 		CE972BCB1E87C9C00000DFC5 /* ConversationCellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE972BCA1E87C9C00000DFC5 /* ConversationCellConfiguration.swift */; };
@@ -42,6 +47,8 @@
 
 /* Begin PBXFileReference section */
 		CE00DCBC1E940C3B00086BAA /* OperationDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationDataManager.swift; sourceTree = "<group>"; };
+		CE00DCC41E95454E00086BAA /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
+		CE00DCC61E954EEF00086BAA /* Chalenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chalenge.swift; sourceTree = "<group>"; };
 		CE27102E1E8969F90077850D /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		CE2710301E896A220077850D /* Conversation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Conversation.storyboard; sourceTree = "<group>"; };
 		CE2710321E8973EB0077850D /* MessageCellConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCellConfiguration.swift; sourceTree = "<group>"; };
@@ -61,6 +68,9 @@
 		CE47E4F51E686DEC003F8B70 /* TinkoffChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinkoffChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE47E4F91E686DEC003F8B70 /* TinkoffChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffChatTests.swift; sourceTree = "<group>"; };
 		CE47E4FB1E686DEC003F8B70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE6DB3DD1E96A642008DBF59 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		CE6DB3EE1E98B7D4008DBF59 /* MultipeerCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipeerCommunicator.swift; sourceTree = "<group>"; };
+		CE6DB3F01E98C156008DBF59 /* CommunicationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicationManager.swift; sourceTree = "<group>"; };
 		CE972BC31E82DBC30000DFC5 /* ConversationsList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ConversationsList.storyboard; sourceTree = "<group>"; };
 		CE972BC51E87C8650000DFC5 /* ConverstionListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConverstionListTableViewController.swift; sourceTree = "<group>"; };
 		CE972BCA1E87C9C00000DFC5 /* ConversationCellConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationCellConfiguration.swift; sourceTree = "<group>"; };
@@ -101,6 +111,9 @@
 			children = (
 				CE972BCE1E87E20A0000DFC5 /* Conversation.swift */,
 				CE2710361E897D200077850D /* Message.swift */,
+				CE6DB3DD1E96A642008DBF59 /* UserProfile.swift */,
+				CE6DB3EE1E98B7D4008DBF59 /* MultipeerCommunicator.swift */,
+				CE6DB3F01E98C156008DBF59 /* CommunicationManager.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -108,6 +121,8 @@
 		CE47E4D51E686DE8003F8B70 = {
 			isa = PBXGroup;
 			children = (
+				CE00DCC61E954EEF00086BAA /* Chalenge.swift */,
+				CE00DCC41E95454E00086BAA /* File */,
 				CE47E4E01E686DE8003F8B70 /* TinkoffChat */,
 				CE47E4F81E686DEC003F8B70 /* TinkoffChatTests */,
 				CE47E4DF1E686DE8003F8B70 /* Products */,
@@ -231,11 +246,12 @@
 				TargetAttributes = {
 					CE47E4DD1E686DE8003F8B70 = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = KJ9QPKNYK8;
+						ProvisioningStyle = Automatic;
 					};
 					CE47E4F41E686DEC003F8B70 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = HS76VV6WJD;
+						DevelopmentTeam = KJ9QPKNYK8;
 						ProvisioningStyle = Automatic;
 						TestTargetID = CE47E4DD1E686DE8003F8B70;
 					};
@@ -267,6 +283,7 @@
 			files = (
 				CE47E4EF1E686DEA003F8B70 /* LaunchScreen.storyboard in Resources */,
 				CE27103F1E8F8DEB0077850D /* User.plist in Resources */,
+				CE00DCC51E95454E00086BAA /* File in Resources */,
 				CE47E4EC1E686DEA003F8B70 /* Assets.xcassets in Resources */,
 				CE2710311E896A220077850D /* Conversation.storyboard in Resources */,
 				CE972BC41E82DBC30000DFC5 /* ConversationsList.storyboard in Resources */,
@@ -289,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE2710331E8973EB0077850D /* MessageCellConfiguration.swift in Sources */,
+				CE00DCC71E954EEF00086BAA /* Chalenge.swift in Sources */,
 				CE972BC61E87C8660000DFC5 /* ConverstionListTableViewController.swift in Sources */,
 				CE47E4E41E686DE8003F8B70 /* ViewController.swift in Sources */,
 				CE27102F1E8969F90077850D /* ConversationViewController.swift in Sources */,
@@ -297,9 +315,12 @@
 				CE47E4E21E686DE8003F8B70 /* AppDelegate.swift in Sources */,
 				CE2710371E897D200077850D /* Message.swift in Sources */,
 				CE972BCF1E87E20A0000DFC5 /* Conversation.swift in Sources */,
+				CE6DB3F11E98C156008DBF59 /* CommunicationManager.swift in Sources */,
 				CE972BCB1E87C9C00000DFC5 /* ConversationCellConfiguration.swift in Sources */,
 				CE00DCBD1E940C3B00086BAA /* OperationDataManager.swift in Sources */,
+				CE6DB3DE1E96A642008DBF59 /* UserProfile.swift in Sources */,
 				CE47E4EA1E686DEA003F8B70 /* TinkoffChat.xcdatamodeld in Sources */,
+				CE6DB3EF1E98B7D4008DBF59 /* MultipeerCommunicator.swift in Sources */,
 				CE2710391E8F654E0077850D /* MessageLabel.swift in Sources */,
 				CE2710351E8974690077850D /* ConversationCell.swift in Sources */,
 			);
@@ -438,9 +459,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TinkoffChat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.olegcompany.TinkoffChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -453,9 +476,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TinkoffChat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.olegcompany.TinkoffChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -469,11 +494,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = HS76VV6WJD;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TinkoffChatTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.olegcompany.TinkoffChatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TinkoffChat.app/TinkoffChat";
 			};
@@ -484,11 +512,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = HS76VV6WJD;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TinkoffChatTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.olegcompany.TinkoffChatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TinkoffChat.app/TinkoffChat";
 			};

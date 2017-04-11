@@ -12,7 +12,8 @@ class Conversation: NSObject {
 
     var imageURL: String?
     var name: String?
-    var message: String?
+    var userID: String?
+    var messages = [Message]()
     var date: Date?
     var online: Bool?
     var hasUnreadMessage: Bool?

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xCl-NY-Fbz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xCl-NY-Fbz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,7 +20,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="PkS-Kk-NxC" customClass="ConversationListCell" customModule="TinkoffChat" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PkS-Kk-NxC" id="boh-pH-ghQ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -34,6 +34,9 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyJ-xD-2lH">
                                             <rect key="frame" x="56" y="0.0" width="213" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="IuY-Vf-jfY"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -47,6 +50,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20.08.2017" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5t-Uz-5g4">
                                             <rect key="frame" x="277" y="0.0" width="90" height="21"/>
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="BRp-J7-oW8"/>
                                                 <constraint firstAttribute="width" constant="90" id="C78-Ft-Opk"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>

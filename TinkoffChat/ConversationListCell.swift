@@ -23,7 +23,7 @@ class ConversationListCell: UITableViewCell, ConversationCellConfiguration {
     
     func fillWithModel(model: Conversation) {
         name = model.name
-        message = model.message
+        message = model.messages.last?.text
         date = model.date
         online = model.online
         hasUnreadMessage = model.hasUnreadMessage
@@ -36,24 +36,38 @@ class ConversationListCell: UITableViewCell, ConversationCellConfiguration {
         avatar.layer.masksToBounds = true
         avatar.layer.cornerRadius = avatar.frame.size.height / 2
         avatar.image = UIImage.init(named: "User")
-        userName.text = name
+        if name != nil {
+            userName.text = name
+        } else {
+            userName.text = "NoName :D"
+        }
+        
         if message != nil {
-            if hasUnreadMessage! {
-                messageText.font = UIFont.boldSystemFont(ofSize: 14)
+            if hasUnreadMessage != nil {
+                if hasUnreadMessage! {
+                    messageText.font = UIFont.boldSystemFont(ofSize: 14)
+                }
             }
             messageText.text = message
+            if date != nil {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "HH:mm"
+                messageDate.text = dateFormatter.string(from: date!)
+            }
+            
+            if online != nil {
+                if online! {
+                    self.backgroundColor = UIColor.init(red: 240/255, green: 240/255, blue: 210/255, alpha: 1)
+                } else {
+                    self.backgroundColor = UIColor.white
+                }
+            }
+            
         } else {
             messageText.text = "No messages yet"
         }
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        messageDate.text = dateFormatter.string(from: date!)
-        if online! {
-            self.backgroundColor = UIColor.init(red: 240/255, green: 240/255, blue: 210/255, alpha: 1)
-        } else {
-            self.backgroundColor = UIColor.white
-        }
     }
+    
     override func prepareForReuse() {
         avatar.image = nil
         userName.text = ""

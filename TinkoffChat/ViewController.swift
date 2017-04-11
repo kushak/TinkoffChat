@@ -15,6 +15,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
     @IBOutlet weak var aboutUser: UITextView!
     @IBOutlet weak var imageUser: UIButton!
     
+    var chel: Chalenge!
+    
     @IBOutlet weak var activityindicator: UIActivityIndicatorView!
     
     @IBOutlet weak var saveGCDButton: UIButton!
@@ -48,16 +50,19 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
         GCDDataManager.getFile { (name, aboutMe, imageData, textColor) in
             self.userName.text = name
             self.aboutUser.text = aboutMe
-            self.imageUser.setImage(UIImage(data: imageData), for: .normal)
             let components = textColor.components(separatedBy: ",")
-            let r = NSString(string: components[0]).floatValue
-            let g = NSString(string: components[1]).floatValue
-            let b = NSString(string: components[2]).floatValue
-            let a = NSString(string: components[3]).floatValue
-            self.textColor.textColor = UIColor(red: CGFloat(r), green: CGFloat(g), blue: CGFloat(b), alpha: CGFloat(a))
+            if textColor != "" {
+                self.imageUser.setImage(UIImage(data: imageData), for: .normal)
+                let r = NSString(string: components[0]).floatValue
+                let g = NSString(string: components[1]).floatValue
+                let b = NSString(string: components[2]).floatValue
+                let a = NSString(string: components[3]).floatValue
+                self.textColor.textColor = UIColor(red: CGFloat(r), green: CGFloat(g), blue: CGFloat(b), alpha: CGFloat(a))
+            }
             self.activityindicator.stopAnimating()
             self.saveGCDButton.isEnabled = true
             self.saveOperationButton.isEnabled = true
+            self.activityindicator.stopAnimating()
         }
     }
     
@@ -171,6 +176,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
     }
     
     func saveData() {
+        //юзера сделать через модельку и в сохранение передавать ее
+//        let user = UserProfile(name: userName.text!, descript: aboutUser.text, image: (imageUser.imageView?.image!)!)
         activityindicator.startAnimating()
         print("Сохранение данных профиля")
         

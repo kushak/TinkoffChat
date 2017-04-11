@@ -22,13 +22,12 @@ class GCDDataManager: NSObject {
     
     static func saveFile(name: String, aboutMe: String?, image: Data, colorText: String, completed: @escaping () -> (), failure: @escaping ()->()) {
         DispatchQueue.global(qos: .userInitiated).sync {
-            sleep(2)
             let dic: NSMutableDictionary = ["name": name,
                                             "aboutMe": aboutMe!,
                                             "image": image,
                                             "colorText": colorText]
             
-            if !dic.write(toFile: plistPathInDocument, atomically: true) {
+            if dic.write(toFile: plistPathInDocument, atomically: true) {
                 DispatchQueue.main.async {
                     completed()
                 }
@@ -42,7 +41,6 @@ class GCDDataManager: NSObject {
     
     static func getFile(completed: @escaping (_ name: String, _ aboutMe: String?, _ image: Data, _ textColor: NSString) -> ()) {
         DispatchQueue.global(qos: .userInteractive).async {
-            sleep(2)
             if !FileManager.default.fileExists(atPath: plistPathInDocument) {
                 let plistPathInBundle = Bundle.main.path(forResource: "User", ofType: "plist")
                 

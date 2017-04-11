@@ -23,19 +23,6 @@ class MessageLabel: UILabel {
     
     override func drawText(in rect: CGRect) {
         let insets = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
-//        var intrinsicSuperViewContentSize = super.intrinsicContentSize
-//        intrinsicSuperViewContentSize.height += topInset + bottomInset
-//        intrinsicSuperViewContentSize.width += leftInset + rightInset
-//        intrinsicContentSize = intrinsicSuperViewContentSize
-//        intrinsicContentSize
         super.drawText(in: UIEdgeInsetsInsetRect(rect, insets))
     }
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }
