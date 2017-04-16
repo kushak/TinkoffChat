@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE00DCBD1E940C3B00086BAA /* OperationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00DCBC1E940C3B00086BAA /* OperationDataManager.swift */; };
 		CE00DCC51E95454E00086BAA /* File in Resources */ = {isa = PBXBuildFile; fileRef = CE00DCC41E95454E00086BAA /* File */; };
-		CE00DCC71E954EEF00086BAA /* Chalenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00DCC61E954EEF00086BAA /* Chalenge.swift */; };
 		CE27102F1E8969F90077850D /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27102E1E8969F90077850D /* ConversationViewController.swift */; };
 		CE2710311E896A220077850D /* Conversation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE2710301E896A220077850D /* Conversation.storyboard */; };
 		CE2710331E8973EB0077850D /* MessageCellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2710321E8973EB0077850D /* MessageCellConfiguration.swift */; };
@@ -20,10 +18,8 @@
 		CE27103F1E8F8DEB0077850D /* User.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE27103E1E8F8DEB0077850D /* User.plist */; };
 		CE47E4E21E686DE8003F8B70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47E4E11E686DE8003F8B70 /* AppDelegate.swift */; };
 		CE47E4E41E686DE8003F8B70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47E4E31E686DE8003F8B70 /* ViewController.swift */; };
-		CE47E4E71E686DE9003F8B70 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE47E4E51E686DE9003F8B70 /* Profile.storyboard */; };
 		CE47E4EA1E686DEA003F8B70 /* TinkoffChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE47E4E81E686DEA003F8B70 /* TinkoffChat.xcdatamodeld */; };
 		CE47E4EC1E686DEA003F8B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE47E4EB1E686DEA003F8B70 /* Assets.xcassets */; };
-		CE47E4EF1E686DEA003F8B70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE47E4ED1E686DEA003F8B70 /* LaunchScreen.storyboard */; };
 		CE47E4FA1E686DEC003F8B70 /* TinkoffChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47E4F91E686DEC003F8B70 /* TinkoffChatTests.swift */; };
 		CE6DB3DE1E96A642008DBF59 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6DB3DD1E96A642008DBF59 /* UserProfile.swift */; };
 		CE6DB3EF1E98B7D4008DBF59 /* MultipeerCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6DB3EE1E98B7D4008DBF59 /* MultipeerCommunicator.swift */; };
@@ -33,6 +29,8 @@
 		CE972BCB1E87C9C00000DFC5 /* ConversationCellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE972BCA1E87C9C00000DFC5 /* ConversationCellConfiguration.swift */; };
 		CE972BCD1E87CA7E0000DFC5 /* ConversationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE972BCC1E87CA7E0000DFC5 /* ConversationListCell.swift */; };
 		CE972BCF1E87E20A0000DFC5 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE972BCE1E87E20A0000DFC5 /* Conversation.swift */; };
+		CEEE2BB71EA3F09200632CA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEE2BB61EA3F09200632CA1 /* LaunchScreen.storyboard */; };
+		CEEE2BB91EA3F0A700632CA1 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEE2BB81EA3F0A700632CA1 /* Profile.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,9 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CE00DCBC1E940C3B00086BAA /* OperationDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationDataManager.swift; sourceTree = "<group>"; };
 		CE00DCC41E95454E00086BAA /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
-		CE00DCC61E954EEF00086BAA /* Chalenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chalenge.swift; sourceTree = "<group>"; };
 		CE27102E1E8969F90077850D /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		CE2710301E896A220077850D /* Conversation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Conversation.storyboard; sourceTree = "<group>"; };
 		CE2710321E8973EB0077850D /* MessageCellConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCellConfiguration.swift; sourceTree = "<group>"; };
@@ -60,22 +56,22 @@
 		CE47E4DE1E686DE8003F8B70 /* TinkoffChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinkoffChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE47E4E11E686DE8003F8B70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE47E4E31E686DE8003F8B70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CE47E4E61E686DE9003F8B70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		CE47E4E91E686DEA003F8B70 /* TinkoffChat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TinkoffChat.xcdatamodel; sourceTree = "<group>"; };
 		CE47E4EB1E686DEA003F8B70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CE47E4EE1E686DEA003F8B70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE47E4F01E686DEA003F8B70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE47E4F51E686DEC003F8B70 /* TinkoffChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinkoffChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE47E4F91E686DEC003F8B70 /* TinkoffChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffChatTests.swift; sourceTree = "<group>"; };
 		CE47E4FB1E686DEC003F8B70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE6DB3DD1E96A642008DBF59 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		CE6DB3EE1E98B7D4008DBF59 /* MultipeerCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipeerCommunicator.swift; sourceTree = "<group>"; };
-		CE6DB3F01E98C156008DBF59 /* CommunicationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicationManager.swift; sourceTree = "<group>"; };
+		CE6DB3F01E98C156008DBF59 /* CommunicationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommunicationManager.swift; path = "Service layer/CommunicationManager.swift"; sourceTree = "<group>"; };
 		CE972BC31E82DBC30000DFC5 /* ConversationsList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ConversationsList.storyboard; sourceTree = "<group>"; };
 		CE972BC51E87C8650000DFC5 /* ConverstionListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConverstionListTableViewController.swift; sourceTree = "<group>"; };
 		CE972BCA1E87C9C00000DFC5 /* ConversationCellConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationCellConfiguration.swift; sourceTree = "<group>"; };
 		CE972BCC1E87CA7E0000DFC5 /* ConversationListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationListCell.swift; sourceTree = "<group>"; };
 		CE972BCE1E87E20A0000DFC5 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		CEEE2BB61EA3F09200632CA1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CEEE2BB81EA3F0A700632CA1 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +95,15 @@
 		CE27103A1E8F711E0077850D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CE972BC81E87C89D0000DFC5 /* Storyboards */,
 				CE972BCC1E87CA7E0000DFC5 /* ConversationListCell.swift */,
 				CE2710341E8974690077850D /* ConversationCell.swift */,
 				CE2710381E8F654E0077850D /* MessageLabel.swift */,
+				CE972BCA1E87C9C00000DFC5 /* ConversationCellConfiguration.swift */,
+				CE2710321E8973EB0077850D /* MessageCellConfiguration.swift */,
 			);
 			name = Views;
+			path = "Presentation layer/Views";
 			sourceTree = "<group>";
 		};
 		CE27103B1E8F713C0077850D /* Models */ = {
@@ -112,16 +112,14 @@
 				CE972BCE1E87E20A0000DFC5 /* Conversation.swift */,
 				CE2710361E897D200077850D /* Message.swift */,
 				CE6DB3DD1E96A642008DBF59 /* UserProfile.swift */,
-				CE6DB3EE1E98B7D4008DBF59 /* MultipeerCommunicator.swift */,
-				CE6DB3F01E98C156008DBF59 /* CommunicationManager.swift */,
 			);
 			name = Models;
+			path = "Presentation layer/Models";
 			sourceTree = "<group>";
 		};
 		CE47E4D51E686DE8003F8B70 = {
 			isa = PBXGroup;
 			children = (
-				CE00DCC61E954EEF00086BAA /* Chalenge.swift */,
 				CE00DCC41E95454E00086BAA /* File */,
 				CE47E4E01E686DE8003F8B70 /* TinkoffChat */,
 				CE47E4F81E686DEC003F8B70 /* TinkoffChatTests */,
@@ -141,16 +139,12 @@
 		CE47E4E01E686DE8003F8B70 /* TinkoffChat */ = {
 			isa = PBXGroup;
 			children = (
-				CE27103B1E8F713C0077850D /* Models */,
-				CE27103A1E8F711E0077850D /* Views */,
-				CE972BC71E87C8800000DFC5 /* ViewControllers */,
-				CE972BC81E87C89D0000DFC5 /* Storyboards */,
+				CEEE2BBA1EA3F15D00632CA1 /* Presentation layer */,
+				CEEE2BBB1EA3F28D00632CA1 /* Service layer */,
+				CEEE2BBC1EA3F2B000632CA1 /* Core layer */,
 				CE972BC91E87C8B60000DFC5 /* SuportFiles */,
 				CE47E4E81E686DEA003F8B70 /* TinkoffChat.xcdatamodeld */,
-				CE972BCA1E87C9C00000DFC5 /* ConversationCellConfiguration.swift */,
-				CE2710321E8973EB0077850D /* MessageCellConfiguration.swift */,
-				CE27103C1E8F85180077850D /* GCDDataManager.swift */,
-				CE00DCBC1E940C3B00086BAA /* OperationDataManager.swift */,
+				CE47E4F01E686DEA003F8B70 /* Info.plist */,
 			);
 			path = TinkoffChat;
 			sourceTree = "<group>";
@@ -164,25 +158,27 @@
 			path = TinkoffChatTests;
 			sourceTree = "<group>";
 		};
-		CE972BC71E87C8800000DFC5 /* ViewControllers */ = {
+		CE972BC71E87C8800000DFC5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				CE972BC51E87C8650000DFC5 /* ConverstionListTableViewController.swift */,
 				CE47E4E31E686DE8003F8B70 /* ViewController.swift */,
 				CE27102E1E8969F90077850D /* ConversationViewController.swift */,
 			);
-			name = ViewControllers;
+			name = Controllers;
+			path = "Presentation layer/Controllers";
 			sourceTree = "<group>";
 		};
 		CE972BC81E87C89D0000DFC5 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				CE972BC31E82DBC30000DFC5 /* ConversationsList.storyboard */,
-				CE47E4E51E686DE9003F8B70 /* Profile.storyboard */,
+				CEEE2BB81EA3F0A700632CA1 /* Profile.storyboard */,
+				CEEE2BB61EA3F09200632CA1 /* LaunchScreen.storyboard */,
 				CE2710301E896A220077850D /* Conversation.storyboard */,
-				CE47E4ED1E686DEA003F8B70 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
+			path = Storyboards.storyboard;
 			sourceTree = "<group>";
 		};
 		CE972BC91E87C8B60000DFC5 /* SuportFiles */ = {
@@ -190,10 +186,36 @@
 			children = (
 				CE47E4E11E686DE8003F8B70 /* AppDelegate.swift */,
 				CE47E4EB1E686DEA003F8B70 /* Assets.xcassets */,
-				CE47E4F01E686DEA003F8B70 /* Info.plist */,
 				CE27103E1E8F8DEB0077850D /* User.plist */,
 			);
-			name = SuportFiles;
+			path = SuportFiles;
+			sourceTree = "<group>";
+		};
+		CEEE2BBA1EA3F15D00632CA1 /* Presentation layer */ = {
+			isa = PBXGroup;
+			children = (
+				CE27103B1E8F713C0077850D /* Models */,
+				CE27103A1E8F711E0077850D /* Views */,
+				CE972BC71E87C8800000DFC5 /* Controllers */,
+			);
+			name = "Presentation layer";
+			sourceTree = "<group>";
+		};
+		CEEE2BBB1EA3F28D00632CA1 /* Service layer */ = {
+			isa = PBXGroup;
+			children = (
+				CE6DB3F01E98C156008DBF59 /* CommunicationManager.swift */,
+			);
+			name = "Service layer";
+			sourceTree = "<group>";
+		};
+		CEEE2BBC1EA3F2B000632CA1 /* Core layer */ = {
+			isa = PBXGroup;
+			children = (
+				CE6DB3EE1E98B7D4008DBF59 /* MultipeerCommunicator.swift */,
+				CE27103C1E8F85180077850D /* GCDDataManager.swift */,
+			);
+			path = "Core layer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,13 +303,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE47E4EF1E686DEA003F8B70 /* LaunchScreen.storyboard in Resources */,
+				CEEE2BB71EA3F09200632CA1 /* LaunchScreen.storyboard in Resources */,
 				CE27103F1E8F8DEB0077850D /* User.plist in Resources */,
+				CEEE2BB91EA3F0A700632CA1 /* Profile.storyboard in Resources */,
 				CE00DCC51E95454E00086BAA /* File in Resources */,
 				CE47E4EC1E686DEA003F8B70 /* Assets.xcassets in Resources */,
 				CE2710311E896A220077850D /* Conversation.storyboard in Resources */,
 				CE972BC41E82DBC30000DFC5 /* ConversationsList.storyboard in Resources */,
-				CE47E4E71E686DE9003F8B70 /* Profile.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +328,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE2710331E8973EB0077850D /* MessageCellConfiguration.swift in Sources */,
-				CE00DCC71E954EEF00086BAA /* Chalenge.swift in Sources */,
 				CE972BC61E87C8660000DFC5 /* ConverstionListTableViewController.swift in Sources */,
 				CE47E4E41E686DE8003F8B70 /* ViewController.swift in Sources */,
 				CE27102F1E8969F90077850D /* ConversationViewController.swift in Sources */,
@@ -317,7 +338,6 @@
 				CE972BCF1E87E20A0000DFC5 /* Conversation.swift in Sources */,
 				CE6DB3F11E98C156008DBF59 /* CommunicationManager.swift in Sources */,
 				CE972BCB1E87C9C00000DFC5 /* ConversationCellConfiguration.swift in Sources */,
-				CE00DCBD1E940C3B00086BAA /* OperationDataManager.swift in Sources */,
 				CE6DB3DE1E96A642008DBF59 /* UserProfile.swift in Sources */,
 				CE47E4EA1E686DEA003F8B70 /* TinkoffChat.xcdatamodeld in Sources */,
 				CE6DB3EF1E98B7D4008DBF59 /* MultipeerCommunicator.swift in Sources */,
@@ -343,25 +363,6 @@
 			targetProxy = CE47E4F61E686DEC003F8B70 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		CE47E4E51E686DE9003F8B70 /* Profile.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE47E4E61E686DE9003F8B70 /* Base */,
-			);
-			name = Profile.storyboard;
-			sourceTree = "<group>";
-		};
-		CE47E4ED1E686DEA003F8B70 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE47E4EE1E686DEA003F8B70 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CE47E4FC1E686DEC003F8B70 /* Debug */ = {
