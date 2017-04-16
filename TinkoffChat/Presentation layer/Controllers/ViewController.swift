@@ -15,8 +15,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
     @IBOutlet weak var aboutUser: UITextView!
     @IBOutlet weak var imageUser: UIButton!
     
-    var chel: Chalenge!
-    
     @IBOutlet weak var activityindicator: UIActivityIndicatorView!
     
     @IBOutlet weak var saveGCDButton: UIButton!
@@ -110,7 +108,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
         saveData()
     }
 
-    @IBAction func operationSaveAction(_ sender: Any) {
+    /*@IBAction func operationSaveAction(_ sender: Any) {
         let color = textColor.textColor!
         let components = color.cgColor.components!
         let colorAsString = String(format: "%f,%f,%f,%f", components[0], components[1], components[2], components[3])
@@ -132,7 +130,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
         }
         let queue = OperationQueue()
         queue.addOperation(operation)
-    }
+    } */
     @IBAction func cancelAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
