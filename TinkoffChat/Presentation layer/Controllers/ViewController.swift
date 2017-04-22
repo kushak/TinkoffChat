@@ -14,28 +14,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var aboutUser: UITextView!
     @IBOutlet weak var imageUser: UIButton!
-    
     @IBOutlet weak var activityindicator: UIActivityIndicatorView!
-    
     @IBOutlet weak var saveGCDButton: UIButton!
-    @IBOutlet weak var saveOperationButton: UIButton!
-    
-    private var tapCounter = 0
-    //между вьюдидлоад и вьювилэпир высчитываются кострейны ВАЖНЫЙ ВОПРОС) 
-    //вьюдид эпир - срабатывает когда вью появлявилась на экране
-    //вью вилдезапир - срабатывает перед тем как экран уходит
-    //вьюдидДезапир - когда экран ушел
-    //viewDidUnload - 
-    //большой круг срабатывает, когда мы ушли с экрана 
-    //Память работает через референс каунт, а не через гербежколлектор; ARC - automaticRefenceCount
-    //retainCycle - прочитать, два объекта ссылаются друг на друга и висят в памяти, хотя на них нет ссылок
 
     // MARK: LifeCycleVC
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("\(#function)")
-        self.controlsSayDescription()
-        
         //добавили жест при котором будет скрываться клавиатура (нажатие в свободное место)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.onTapAction))
         self.view.addGestureRecognizer(tapGesture);
@@ -44,13 +28,16 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
         self.aboutUser.delegate = self
         activityindicator.startAnimating()
         saveGCDButton.isEnabled = false
-        saveOperationButton.isEnabled = false
-        GCDDataManager.getFile { (name, aboutMe, imageData, textColor) in
-            self.userName.text = name
-            self.aboutUser.text = aboutMe
-            let components = textColor.components(separatedBy: ",")
-            if textColor != "" {
-                self.imageUser.setImage(UIImage(data: imageData), for: .normal)
+        
+        let user = UserProfile()
+        user.get() { (name, aboutMe, imageData, textColor) in
+            self.userName.text = user.userName
+            self.aboutUser.text = user.descriptionUser
+            if user.userImage != nil {
+                self.imageUser.setImage(user.userImage, for: .normal)
+            }
+            let components = user.textColor.components(separatedBy: ",")
+            if user.textColor != "" {
                 let r = NSString(string: components[0]).floatValue
                 let g = NSString(string: components[1]).floatValue
                 let b = NSString(string: components[2]).floatValue
@@ -59,40 +46,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
             }
             self.activityindicator.stopAnimating()
             self.saveGCDButton.isEnabled = true
-            self.saveOperationButton.isEnabled = true
-            self.activityindicator.stopAnimating()
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("\(#function)")
-        self.controlsSayDescription()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print("\(#function)")
-        self.controlsSayDescription()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        print("\(#function)")
-        self.controlsSayDescription()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        print("\(#function)")
-        self.controlsSayDescription()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        print("\(#function)")
-        self.controlsSayDescription()
-        
     }
     
     //MARK: UIImagePickerControllerDelegate
@@ -108,29 +62,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
         saveData()
     }
 
-    /*@IBAction func operationSaveAction(_ sender: Any) {
-        let color = textColor.textColor!
-        let components = color.cgColor.components!
-        let colorAsString = String(format: "%f,%f,%f,%f", components[0], components[1], components[2], components[3])
-        let operation = OperationDataManager(userName: userName.text,
-                                             aboutMe: aboutUser.text,
-                                             image: UIImagePNGRepresentation((imageUser.imageView?.image)!),
-                                             colorText: colorAsString)
-        operation.completionBlock = {
-            self.activityindicator.stopAnimating()
-            self.saveGCDButton.isEnabled = true
-            self.saveOperationButton.isEnabled = true
-            
-            let alertController = UIAlertController(title: "Данные сохранены",
-                                                    message: nil,
-                                                    preferredStyle: .alert)
-            let oneAction = UIAlertAction(title: "Ок", style: .default) { _ in }
-            alertController.addAction(oneAction)
-            self.present(alertController, animated: true) { }
-        }
-        let queue = OperationQueue()
-        queue.addOperation(operation)
-    } */
     @IBAction func cancelAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -174,32 +105,27 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
     }
     
     func saveData() {
-        //юзера сделать через модельку и в сохранение передавать ее
-//        let user = UserProfile(name: userName.text!, descript: aboutUser.text, image: (imageUser.imageView?.image!)!)
+        let color = textColor.textColor!
+        let components = color.cgColor.components!
+        let colorAsString = String(format: "%f,%f,%f,%f", components[0], components[1], components[2], components[3])
+        let image = (imageUser.imageView?.image!)!
+        let user = UserProfile(name: userName.text!, descript: aboutUser.text, image: image, color: colorAsString)
+        
         activityindicator.startAnimating()
         print("Сохранение данных профиля")
         
         saveGCDButton.isEnabled = false
-        saveOperationButton.isEnabled = false
         
-        let color = textColor.textColor!
-        let components = color.cgColor.components!
-        let colorAsString = String(format: "%f,%f,%f,%f", components[0], components[1], components[2], components[3])
-        GCDDataManager.saveFile(name: userName.text!,
-                                aboutMe: aboutUser.text,
-                                image: UIImagePNGRepresentation((imageUser.imageView?.image)!)!,
-                                colorText: colorAsString,
-                                completed: {
-                                    self.activityindicator.stopAnimating()
-                                    self.saveGCDButton.isEnabled = true
-                                    self.saveOperationButton.isEnabled = true
-                                    
-                                    let alertController = UIAlertController(title: "Данные сохранены",
-                                                                            message: nil,
-                                                                            preferredStyle: .alert)
-                                    let oneAction = UIAlertAction(title: "Ок", style: .default) { _ in }
-                                    alertController.addAction(oneAction)
-                                    self.present(alertController, animated: true) { }
+        user.save(completed: {
+            self.activityindicator.stopAnimating()
+            self.saveGCDButton.isEnabled = true
+            
+            let alertController = UIAlertController(title: "Данные сохранены",
+                                                    message: nil,
+                                                    preferredStyle: .alert)
+            let oneAction = UIAlertAction(title: "Ок", style: .default) { _ in }
+            alertController.addAction(oneAction)
+            self.present(alertController, animated: true) { }
         }) {
             self.activityindicator.stopAnimating()
             let alertController = UIAlertController(title: "Ошибка",
@@ -214,17 +140,5 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
             self.present(alertController, animated: true) { }
         }
     }
-    
-    func controlsSayDescription() {
-//        for view in view.subviews {
-//            print("\(view.classForCoder) frame: \(view.frame)")
-//        }
-//        print("\n")
-    }
 }
-
-//Таблицы 
-// таблица стиля плей - хедер и футер не уезжают / плейн - скролятся, как обычные строки
-// table.view.rowHeight = UITableViewAutomaticDimension - считает автоматически, table.view.estimatedRowHeight = 44 - для автоматического расчета высоты ячеек приблизительное значение
-// метод таблевью естимейтХайтФоРоуАт - говорит какой высоты должна быть ячеек
 

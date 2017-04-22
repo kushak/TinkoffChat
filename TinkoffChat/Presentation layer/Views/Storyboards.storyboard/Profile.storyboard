@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,13 +24,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CnJ-E8-p9R">
-                                <rect key="frame" x="0.0" y="623" width="185.5" height="44"/>
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="HCb-6A-sel"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="GCD сохранить">
+                                <state key="normal" title="Сохранить">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -39,18 +39,27 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя пользователя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdE-il-Gpt">
                                 <rect key="frame" x="16" y="72" width="147" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Fxu-Lc-u5j"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя пользователя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ud8-uh-XoE">
                                 <rect key="frame" x="16" y="97" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="AjW-vS-Cka"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Изображение профиля" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0t-zJ-0fl">
                                 <rect key="frame" x="16" y="256" width="186" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="6Wo-ph-8lo"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -66,6 +75,9 @@
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="О себе" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIe-OL-bNO">
                                 <rect key="frame" x="16" y="135" width="56" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="NyE-77-XS4"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -110,15 +122,17 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цвет текста" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20G-kZ-uAs">
                                 <rect key="frame" x="16" y="548" width="95" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="SzY-vT-tSz"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MpL-mH-Us2">
-                                <rect key="frame" x="113" y="285" width="150" height="150"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MpL-mH-Us2">
+                                <rect key="frame" x="60.5" y="285" width="255" height="255"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="MpL-mH-Us2" secondAttribute="height" multiplier="1:1" id="kNj-Yn-Pbd"/>
-                                    <constraint firstAttribute="height" constant="150" id="mkh-Bq-XkX"/>
+                                    <constraint firstAttribute="width" secondItem="MpL-mH-Us2" secondAttribute="height" multiplier="1:1" id="woh-0K-6YE"/>
                                 </constraints>
                                 <state key="normal" image="User"/>
                                 <connections>
@@ -134,6 +148,9 @@
                             </view>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfP-Nw-zLE">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="kf3-bt-Q9E"/>
+                                </constraints>
                                 <color key="barTintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Мой профиль" id="pvB-Ig-2pt">
@@ -145,16 +162,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MaV-qv-OB1">
-                                <rect key="frame" x="189.5" y="623" width="185.5" height="44"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Operation сохранить">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="operationSaveAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WAx-0L-Aob"/>
-                                </connections>
-                            </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Nlm-Zu-esP">
                                 <rect key="frame" x="169" y="127" width="37" height="37"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -163,7 +170,6 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="CnJ-E8-p9R" firstAttribute="top" secondItem="kEz-iJ-kj7" secondAttribute="bottom" constant="16" id="0zJ-bv-cIr"/>
-                            <constraint firstItem="MaV-qv-OB1" firstAttribute="width" secondItem="CnJ-E8-p9R" secondAttribute="width" id="1Qs-Gp-8Jn"/>
                             <constraint firstItem="Ywv-hu-qpC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1VX-HP-IAH"/>
                             <constraint firstItem="xZc-e7-0bg" firstAttribute="leading" secondItem="IeW-rk-I4V" secondAttribute="trailing" constant="8" id="4Ld-ng-Uto"/>
                             <constraint firstItem="XdE-il-Gpt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="4zH-pX-vtf"/>
@@ -172,8 +178,6 @@
                             <constraint firstItem="IeW-rk-I4V" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8Hf-mD-NMW"/>
                             <constraint firstItem="Ud8-uh-XoE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9gU-Ck-Zhf"/>
                             <constraint firstItem="CnJ-E8-p9R" firstAttribute="top" secondItem="xZc-e7-0bg" secondAttribute="bottom" constant="16" id="9sq-KO-zaC"/>
-                            <constraint firstItem="MaV-qv-OB1" firstAttribute="leading" secondItem="CnJ-E8-p9R" secondAttribute="trailing" constant="4" id="AAc-xk-mfm"/>
-                            <constraint firstAttribute="trailing" secondItem="MaV-qv-OB1" secondAttribute="trailing" id="BPP-E6-bF0"/>
                             <constraint firstItem="CnJ-E8-p9R" firstAttribute="top" secondItem="0Sv-eL-DJZ" secondAttribute="bottom" constant="16" id="BaR-3b-1mw"/>
                             <constraint firstItem="nfP-Nw-zLE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DIV-Vg-nQF"/>
                             <constraint firstItem="nfP-Nw-zLE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ez5-xI-Vnw"/>
@@ -182,9 +186,9 @@
                             <constraint firstAttribute="leadingMargin" secondItem="d0t-zJ-0fl" secondAttribute="leading" id="HwW-Ed-FfH"/>
                             <constraint firstItem="xZc-e7-0bg" firstAttribute="height" secondItem="IeW-rk-I4V" secondAttribute="height" id="Id1-qj-05w"/>
                             <constraint firstItem="d0t-zJ-0fl" firstAttribute="top" secondItem="FKZ-Ii-Ci3" secondAttribute="bottom" constant="8" id="JVL-si-zcf"/>
+                            <constraint firstItem="20G-kZ-uAs" firstAttribute="top" secondItem="MpL-mH-Us2" secondAttribute="bottom" priority="750" constant="8" id="JhB-WN-usQ"/>
                             <constraint firstItem="0Sv-eL-DJZ" firstAttribute="leading" secondItem="xZc-e7-0bg" secondAttribute="trailing" constant="8" id="LhN-Cu-a5t"/>
                             <constraint firstItem="MpL-mH-Us2" firstAttribute="top" secondItem="d0t-zJ-0fl" secondAttribute="bottom" constant="8" id="M8L-ao-WwG"/>
-                            <constraint firstItem="MaV-qv-OB1" firstAttribute="height" secondItem="CnJ-E8-p9R" secondAttribute="height" id="N3h-my-eHY"/>
                             <constraint firstItem="xZc-e7-0bg" firstAttribute="width" secondItem="IeW-rk-I4V" secondAttribute="width" id="Nhj-Yk-K6e"/>
                             <constraint firstItem="fil-WS-TVB" firstAttribute="leading" secondItem="kEz-iJ-kj7" secondAttribute="trailing" constant="8" id="O07-le-FGk"/>
                             <constraint firstItem="IeW-rk-I4V" firstAttribute="top" secondItem="20G-kZ-uAs" secondAttribute="bottom" constant="8" id="P0G-Y8-qbb"/>
@@ -192,10 +196,11 @@
                             <constraint firstItem="iIe-OL-bNO" firstAttribute="top" secondItem="Ud8-uh-XoE" secondAttribute="bottom" constant="8" id="Tin-Lr-ZZo"/>
                             <constraint firstItem="20G-kZ-uAs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="UjK-Al-2c0"/>
                             <constraint firstItem="FKZ-Ii-Ci3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="VhT-b6-plD"/>
+                            <constraint firstAttribute="trailing" secondItem="CnJ-E8-p9R" secondAttribute="trailing" id="XXN-MQ-oj7"/>
                             <constraint firstItem="iIe-OL-bNO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cyA-rX-KLV"/>
+                            <constraint firstAttribute="trailing" secondItem="MpL-mH-Us2" secondAttribute="trailing" priority="750" constant="8" id="d49-Uu-pmP"/>
                             <constraint firstItem="Nlm-Zu-esP" firstAttribute="top" secondItem="Ud8-uh-XoE" secondAttribute="bottom" id="dJ7-gM-NJ3"/>
                             <constraint firstItem="0Sv-eL-DJZ" firstAttribute="width" secondItem="IeW-rk-I4V" secondAttribute="width" id="e06-gd-cp5"/>
-                            <constraint firstAttribute="bottom" secondItem="MaV-qv-OB1" secondAttribute="bottom" id="e0m-lb-as9"/>
                             <constraint firstItem="Nlm-Zu-esP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gGe-ku-L98"/>
                             <constraint firstItem="kEz-iJ-kj7" firstAttribute="width" secondItem="IeW-rk-I4V" secondAttribute="width" id="gW5-bM-nlh"/>
                             <constraint firstItem="MpL-mH-Us2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hqm-2t-WGx"/>
@@ -210,7 +215,9 @@
                             <constraint firstItem="CnJ-E8-p9R" firstAttribute="top" secondItem="IeW-rk-I4V" secondAttribute="bottom" constant="16" id="pym-MU-wmT"/>
                             <constraint firstAttribute="trailing" secondItem="nfP-Nw-zLE" secondAttribute="trailing" id="q58-Zz-4Qi"/>
                             <constraint firstItem="Ywv-hu-qpC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qR0-Il-SyA"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="MpL-mH-Us2" secondAttribute="trailing" constant="8" id="vBw-oF-xtW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ud8-uh-XoE" secondAttribute="trailing" id="x1r-24-5gY"/>
+                            <constraint firstItem="20G-kZ-uAs" firstAttribute="top" relation="greaterThanOrEqual" secondItem="MpL-mH-Us2" secondAttribute="bottom" constant="8" id="zyr-Mt-fOv"/>
                         </constraints>
                     </view>
                     <connections>
@@ -218,7 +225,6 @@
                         <outlet property="activityindicator" destination="Nlm-Zu-esP" id="80v-38-xzE"/>
                         <outlet property="imageUser" destination="MpL-mH-Us2" id="0rT-hI-bj3"/>
                         <outlet property="saveGCDButton" destination="CnJ-E8-p9R" id="4eC-38-J8I"/>
-                        <outlet property="saveOperationButton" destination="MaV-qv-OB1" id="Wti-pM-E0B"/>
                         <outlet property="textColor" destination="20G-kZ-uAs" id="ST8-vS-ZjG"/>
                         <outlet property="userName" destination="Ud8-uh-XoE" id="Ger-Z2-HVb"/>
                     </connections>

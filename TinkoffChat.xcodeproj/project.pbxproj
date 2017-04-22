@@ -31,6 +31,7 @@
 		CE972BCF1E87E20A0000DFC5 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE972BCE1E87E20A0000DFC5 /* Conversation.swift */; };
 		CEEE2BB71EA3F09200632CA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEE2BB61EA3F09200632CA1 /* LaunchScreen.storyboard */; };
 		CEEE2BB91EA3F0A700632CA1 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEE2BB81EA3F0A700632CA1 /* Profile.storyboard */; };
+		CEEE2BBE1EA49F6000632CA1 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEE2BBD1EA49F6000632CA1 /* StorageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		CE972BCE1E87E20A0000DFC5 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		CEEE2BB61EA3F09200632CA1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEEE2BB81EA3F0A700632CA1 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		CEEE2BBD1EA49F6000632CA1 /* StorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StorageService.swift; path = "Service layer/StorageService.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				CE6DB3F01E98C156008DBF59 /* CommunicationManager.swift */,
+				CEEE2BBD1EA49F6000632CA1 /* StorageService.swift */,
 			);
 			name = "Service layer";
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				CE6DB3F11E98C156008DBF59 /* CommunicationManager.swift in Sources */,
 				CE972BCB1E87C9C00000DFC5 /* ConversationCellConfiguration.swift in Sources */,
 				CE6DB3DE1E96A642008DBF59 /* UserProfile.swift in Sources */,
+				CEEE2BBE1EA49F6000632CA1 /* StorageService.swift in Sources */,
 				CE47E4EA1E686DEA003F8B70 /* TinkoffChat.xcdatamodeld in Sources */,
 				CE6DB3EF1E98B7D4008DBF59 /* MultipeerCommunicator.swift in Sources */,
 				CE2710391E8F654E0077850D /* MessageLabel.swift in Sources */,
