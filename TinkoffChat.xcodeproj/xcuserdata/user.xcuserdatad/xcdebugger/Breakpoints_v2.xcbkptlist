@@ -1286,11 +1286,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinkoffChat/Presentation layer/Controllers/ViewController.swift"
-            timestampString = "514557868.725022"
+            timestampString = "515164585.195323"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "saveData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1302,11 +1302,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinkoffChat/Presentation layer/Controllers/ViewController.swift"
-            timestampString = "514557868.725022"
+            timestampString = "515164585.195323"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1318,11 +1318,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinkoffChat/Presentation layer/Controllers/ViewController.swift"
-            timestampString = "514557868.725022"
+            timestampString = "515164585.195323"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "7">
             <Locations>
@@ -1421,38 +1421,6 @@
             endingLineNumber = "31"
             landmarkName = "saveFile(name:aboutMe:image:colorText:completed:failure:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static TinkoffChat.GCDDataManager.saveFile (name : Swift.String, aboutMe : Swift.Optional&lt;Swift.String&gt;, image : Foundation.Data, colorText : Swift.String, completed : () -&gt; (), failure : () -&gt; ()) -&gt; ()"
-                  moduleName = "TinkoffChat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Documents/FinTech/TinkoffChat/TinkoffChat/Core%20layer/GCDDataManager.swift"
-                  timestampString = "514557562.701524"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "87">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static TinkoffChat.GCDDataManager.(saveFile (name : Swift.String, aboutMe : Swift.Optional&lt;Swift.String&gt;, image : Foundation.Data, colorText : Swift.String, completed : () -&gt; (), failure : () -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "TinkoffChat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Documents/FinTech/TinkoffChat/TinkoffChat/Core%20layer/GCDDataManager.swift"
-                  timestampString = "514557562.703764"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "186">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1500,6 +1468,70 @@
             startingLineNumber = "52"
             endingLineNumber = "52"
             landmarkName = "getFile(completed:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TinkoffChat/Presentation layer/Controllers/ViewController.swift"
+            timestampString = "515164585.195323"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TinkoffChat/Presentation layer/Models/AppUser.swift"
+            timestampString = "515160972.626437"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "findOrInsertAppUser(in:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TinkoffChat/Presentation layer/Models/AppUser.swift"
+            timestampString = "515164378.881698"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "insertAppUser(in:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TinkoffChat/Presentation layer/Controllers/ViewController.swift"
+            timestampString = "515161440.631444"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
