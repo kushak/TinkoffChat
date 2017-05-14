@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Lb-SZ-poZ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Download Image Collection View Controller-->
+        <scene sceneID="P1W-Vx-Vie">
+            <objects>
+                <collectionViewController id="4Lb-SZ-poZ" customClass="DownloadImageCollectionViewController" customModule="TinkoffChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Jbg-Pl-7oL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IVC-nn-nXK">
+                            <size key="itemSize" width="140" height="134"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="2MZ-ho-1wq" customClass="ImageCollectionViewCell" customModule="TinkoffChat" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="140" height="134"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="140" height="134"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="rz4-Dj-ksH">
+                                            <rect key="frame" x="0.0" y="0.0" width="140" height="134"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="rz4-Dj-ksH" secondAttribute="trailing" id="9gX-Ng-KlJ"/>
+                                    <constraint firstItem="rz4-Dj-ksH" firstAttribute="leading" secondItem="2MZ-ho-1wq" secondAttribute="leading" id="GCq-GW-lRl"/>
+                                    <constraint firstAttribute="bottom" secondItem="rz4-Dj-ksH" secondAttribute="bottom" id="Q2e-PT-YaH"/>
+                                    <constraint firstItem="rz4-Dj-ksH" firstAttribute="top" secondItem="2MZ-ho-1wq" secondAttribute="top" id="W2j-kc-hog"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="image" destination="rz4-Dj-ksH" id="WZa-96-Chg"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="4Lb-SZ-poZ" id="Ggd-nN-qma"/>
+                            <outlet property="delegate" destination="4Lb-SZ-poZ" id="T2z-BT-jST"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ayG-4v-7mp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="149.59999999999999" y="149.77511244377811"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="image-placeholder" width="50" height="50"/>
+    </resources>
+</document>

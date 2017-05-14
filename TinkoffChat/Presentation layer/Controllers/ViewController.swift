@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, DownloadImageCollectionViewControllerDelegate {
     
     @IBOutlet weak var textColor: UILabel!
     @IBOutlet weak var userName: UITextField!
@@ -101,11 +101,17 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
             imagePicker.sourceType = .camera
             self.present(imagePicker, animated: true, completion: nil)
         }
-        let threeAction = UIAlertAction(title: "Назад", style: .default) { _ in }
+        let threeAction = UIAlertAction(title: "Загрузить", style: .default) { _ in
+            let vc = UIStoryboard(name: "DownloadImage", bundle: nil).instantiateInitialViewController() as! DownloadImageCollectionViewController
+            vc.delegate = self
+            self.present(vc, animated: true, completion: nil)
+        }
+        let fourAction = UIAlertAction(title: "Назад", style: .default) { _ in }
         
         alertController.addAction(oneAction)
         alertController.addAction(twoAction)
         alertController.addAction(threeAction)
+        alertController.addAction(fourAction)
 
         self.present(alertController, animated: true) { }
     }
@@ -141,33 +147,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
                 self.present(alertController, animated: true) { }
             }
         }
-//        print("Сохранение данных профиля")
-//        
-//        saveGCDButton.isEnabled = false
-//        
-//        user.save(completed: {
-//            self.activityindicator.stopAnimating()
-//            self.saveGCDButton.isEnabled = true
-//            
-//            let alertController = UIAlertController(title: "Данные сохранены",
-//                                                    message: nil,
-//                                                    preferredStyle: .alert)
-//            let oneAction = UIAlertAction(title: "Ок", style: .default) { _ in }
-//            alertController.addAction(oneAction)
-//            self.present(alertController, animated: true) { }
-//        }) {
-//            self.activityindicator.stopAnimating()
-//            let alertController = UIAlertController(title: "Ошибка",
-//                                                    message: "Не удалось сохранить",
-//                                                    preferredStyle: .alert)
-//            let oneAction = UIAlertAction(title: "Ок", style: .cancel) { _ in }
-//            let twoAction = UIAlertAction(title: "Повторить", style: .default) { _ in
-//                self.saveData()
-//            }
-//            alertController.addAction(oneAction)
-//            alertController.addAction(twoAction)
-//            self.present(alertController, animated: true) { }
-//        }
+    }
+    
+    //MARK: DownloadImageCollectionViewControllerDelegate
+    func setImage(imageToShow: UIImage) {
+        imageUser.setImage(imageToShow, for: UIControlState.normal)
     }
 }
 
