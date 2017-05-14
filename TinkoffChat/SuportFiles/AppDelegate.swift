@@ -14,9 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    let coreDataStack = CoreDataStack()
+//    var storageCervice: StorageService?
+//    var comunicator: MultipeerCommunicator?
+    var communicationManager: CommunicationManager?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+//        storageCervice = StorageService()
+        communicationManager = CommunicationManager()
         return true
     }
 

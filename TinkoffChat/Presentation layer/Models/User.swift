@@ -27,7 +27,7 @@ extension User {
         }
         
         var user: User?
-        guard let fetchRequest = User.fetchRequestUser(model: model) else { return nil }
+        guard let fetchRequest = model.fetchRequestFromTemplate(withName: "UserOnId", substitutionVariables: ["id" : id]) as? NSFetchRequest<User> else { return nil }
         do {
             let results = try context.fetch(fetchRequest)
             if let foundUser = results.first {
@@ -45,9 +45,15 @@ extension User {
     }
     
     static func insertUser(id: String, in context: NSManagedObjectContext) -> User? {
+        print("INSERT USER ID: \(id)")
         if let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context) as? User {
-            user.userId = id
-            return user
+            if let conversation = NSEntityDescription.insertNewObject(forEntityName: "Conversation1", into: context) as? Conversation1 {
+                user.userId = id
+                conversation.conversationId = Conversation.generateID()
+                conversation.user = user
+                return user
+            }
+            
         }
         return nil
     }

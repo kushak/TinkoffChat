@@ -10,10 +10,6 @@ import UIKit
 import CoreData
 
 protocol CoreDataManagerProtocol {
-//    func getMasterContext() -> NSManagedObjectContext
-//    func getMainContext() -> NSManagedObjectContext
-//    func getSaveContext() -> NSManagedObjectContext?
-//    func getCoreDataModel() -> NSManagedObjectModel
 }
 
 class CoreDataStack: NSObject {
@@ -124,6 +120,7 @@ class CoreDataStack: NSObject {
     
     //MARK: Save context
     public func performSave(context: NSManagedObjectContext, completionHandler: (() -> Void)?) {
+//        print("SAVE CONTEXT: \(context)")
         if context.hasChanges {
             context.perform { [weak self] in
                 do {
@@ -143,24 +140,6 @@ class CoreDataStack: NSObject {
             completionHandler?()
         }
     }
-    
-    
-    //MARK: getContexts
-//    func getMasterContext() -> NSManagedObjectContext {
-//        return self.masterContext!
-//    }
-//    
-//    func getMainContext() -> NSManagedObjectContext {
-//        return self.mainContext!
-//    }
-    
-//    func getSaveContext() -> NSManagedObjectContext? {
-//        return self.saveContext
-//    }
-    
-//    func getCoreDataModel() -> NSManagedObjectModel {
-//        return self.managedObjectModel!
-//    }
 }
 
 

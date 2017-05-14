@@ -62,36 +62,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
                 saveGCDButton.isEnabled = true
             }
         }
-        
-//        }
-        
-            
-//            appUser = service.getAppUser {
-//            self.user = self.appUser?.currentUser
-//            self.initViews(for: self.user!)
-//        }
-//        
-//        user = appUser?.currentUser
-        
-//        if let currentUser = 
-//        let user = UserProfile()
-//        user.get() { (name, aboutMe, imageData, textColor) in
-//            self.userName.text = user.userName
-//            self.aboutUser.text = user.descriptionUser
-//            if user.userImage != nil {
-//                self.imageUser.setImage(user.userImage, for: .normal)
-//            }
-//            let components = user.textColor.components(separatedBy: ",")
-//            if user.textColor != "" {
-//                let r = NSString(string: components[0]).floatValue
-//                let g = NSString(string: components[1]).floatValue
-//                let b = NSString(string: components[2]).floatValue
-//                let a = NSString(string: components[3]).floatValue
-//                self.textColor.textColor = UIColor(red: CGFloat(r), green: CGFloat(g), blue: CGFloat(b), alpha: CGFloat(a))
-//            }
-//            self.activityindicator.stopAnimating()
-//            self.saveGCDButton.isEnabled = true
-//        }
     }
     
     //MARK: UIImagePickerControllerDelegate
@@ -150,12 +120,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
     }
     
     func saveData() {
-//        let color = textColor.textColor!
-//        let components = color.cgColor.components!
-//        let colorAsString = String(format: "%f,%f,%f,%f", components[0], components[1], components[2], components[3])
-        
-//        let image = (imageUser.imageView?.image!)!
-//        let user = UserProfile(name: userName.text!, descript: aboutUser.text, image: image, color: colorAsString)
         
         activityindicator.startAnimating()
         

@@ -18,4 +18,12 @@ class Conversation: NSObject {
     var online: Bool?
     var hasUnreadMessage: Bool?
     
+    static func generateID() -> String {
+        
+        var timeStamp: String {
+            return "\(arc4random())" + "\(Date().timeIntervalSince1970)" + "\(arc4random())"
+        }
+        return String(timeStamp.hashValue)
+    }
+    
 }

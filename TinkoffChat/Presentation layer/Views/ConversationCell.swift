@@ -24,10 +24,9 @@ class ConversationCell: UITableViewCell, MessageCellConfiguration {
     }
 
     
-    func fillWithModel(model: Message) {
+    func fillWithModel(model: Message1) {
         textMessage = model.text
-        isInputMessage = model.isInputMessage
-        
+//        isInputMessage = model.isInputMessage
         initControls()
     }
     

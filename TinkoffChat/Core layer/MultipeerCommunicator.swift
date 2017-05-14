@@ -59,7 +59,7 @@ class MultipeerCommunicator: NSObject, Communicator {
     
     override init() {
         
-        userName = "vbb"
+        userName = UIDevice.current.name
         advertiser = MCNearbyServiceAdvertiser(peer: myPeerID, discoveryInfo: ["userName": userName], serviceType: userServiceType)
         browser = MCNearbyServiceBrowser(peer: myPeerID, serviceType: userServiceType)
         online = true
@@ -128,6 +128,7 @@ extension MultipeerCommunicator: MCNearbyServiceBrowserDelegate {
     
     func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
         print("Lost peer: \(peerID.displayName)")
+        delegate?.didLostUser(userID: peerID.displayName)
     }
 }
 
@@ -139,19 +140,19 @@ extension MultipeerCommunicator : MCSessionDelegate {
             online = true
             print("peer \(peerID) state is connceted")
         case .notConnected:
-            peersDictionary.removeValue(forKey: peerID.displayName)
-            delegate?.didLostUser(userID: peerID.displayName)
-        default:
             online = false
+//            peersDictionary.removeValue(forKey: peerID.displayName)
+        default:
+            
             print("peer \(peerID) state is not connected: \(state)")
         }
     }
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         let recievedData = try! JSONSerialization.jsonObject(with: data, options: []) as! [String:String]
-        
-        let fromUser = peersDictionary[peerID.displayName]?.userName
-        delegate?.didReceiveMessage(text: recievedData["text"]!, fromUser: fromUser!, toUser: myPeerID.displayName)
+//        let fromUser = peersDictionary[peerID.displayName]?.userName
+//        delegate?.didReceiveMessage(text: recievedData["text"]!, fromUser: fromUser!, toUser: myPeerID.displayName)
+        delegate?.didReceiveMessage(text: recievedData["text"]!, fromUser: peerID.displayName, toUser: myPeerID.displayName)
         print("didRecieveData \(recievedData["text"]!)")
     }
     

@@ -1,4 +1,4 @@
-//
+
 //  ConversationListCell.swift
 //  TinkoffChat
 //
@@ -21,12 +21,17 @@ class ConversationListCell: UITableViewCell, ConversationCellConfiguration {
     @IBOutlet weak var messageText: UILabel!
     @IBOutlet weak var messageDate: UILabel!
     
-    func fillWithModel(model: Conversation) {
-        name = model.name
-        message = model.messages.last?.text
-        date = model.date
-        online = model.online
-        hasUnreadMessage = model.hasUnreadMessage
+    func fillWithModel(model: Conversation1) {
+//        name = model.name
+//        message = model.messages.last?.text
+//        date = model.date
+//        online = model.online
+//        hasUnreadMessage = model.hasUnreadMessage
+        name = model.user?.name
+        message = model.lastMessage?.text
+        date = model.lastMessage?.date as Date?
+        online = model.user?.isOnline
+        hasUnreadMessage = model.isRead
         
         initControls()
     }

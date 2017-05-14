@@ -9,9 +9,9 @@
 import UIKit
 
 class ConversationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
-    var conversation: Conversation?
-//    var userName: String?
-    var messages = [Message]()
+    var conversation: Conversation1?
+//    var messages = [Message]()
+    var conversationService: ConversationService?
 
     @IBOutlet weak var messageField: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -19,8 +19,8 @@ class ConversationViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var sendButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationItem.title = conversation?.name
+        conversationService = ConversationService(tableView: tableView, conversation: conversation!)
+        navigationItem.title = conversation?.user?.name
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 44
@@ -28,85 +28,22 @@ class ConversationViewController: UIViewController, UITableViewDelegate, UITable
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.onTapAction))
         self.view.addGestureRecognizer(tapGesture);
-        
-        loadMessages()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.tableView.scrollToRow(at: NSIndexPath.init(row: self.messages.count - 1, section: 0) as IndexPath, at: .bottom, animated: true)
+        scrollToBottom()
         registerForKeyboardNotifications()
-        registerForComunicatorManager()
     }
-    
     override func viewDidDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func registerForComunicatorManager() {
-        NotificationCenter.default.addObserver(self, selector: #selector(foundUser(_:)), name: NSNotification.Name(rawValue: "didFoundUser"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(lostUser(_:)), name: NSNotification.Name(rawValue: "didLostUser"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(receiveMessage(_:)), name: NSNotification.Name(rawValue: "didReceiveMessage"), object: nil)
-    }
-    
-    func foundUser(_ notification: NSNotification) {
-        if !(conversation?.online)! {
-            let userID = notification.userInfo?["user"] as! String
-            if userID == conversation?.userID {
-                sendButton.isEnabled = true
-                conversation?.online = true
-            }
-        }
-    }
-    
-    func lostUser(_ notification: NSNotification) {
-        if (conversation?.online)! {
-            let userID = notification.userInfo?["user"] as! String
-            if userID == conversation?.userID {
-                sendButton.isEnabled = false
-                conversation?.online = false
-            }
-        }
-    }
-    
-    func receiveMessage(_ notification: NSNotification){
-        let text = notification.userInfo?["text"] as! String
-        let forConversation = notification.userInfo?["user"] as! String
-        if forConversation == conversation?.name {
-            addMessage(text: text, isInputMessage: true)
-        }
-    }
-    
-    func addMessage(text: String, isInputMessage: Bool) {
-        DispatchQueue.main.async {
-            let message = Message(text: text, isInputMessage: isInputMessage)
-            message.date = Date.init(timeIntervalSinceNow: 0)
-            self.messages.append(message)
-            
-            let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
-            self.tableView.insertRows(at: [indexPath], with: .top)
-            
-            self.tableView.scrollToRow(at: NSIndexPath.init(row: self.messages.count - 1, section: 0) as IndexPath, at: .bottom, animated: true)
-            
-            self.tableView.reloadData()
-        }
-    }
-    
-    func loadMessages() {
-        messages = (conversation?.messages)!
-        tableView.reloadData()
     }
     
     @IBAction func sendAction(_ sender: UIButton) {
         if messageField.text != "" {
-            view.endEditing(true)
-            addMessage(text: messageField.text!, isInputMessage: false)
-            CommunicationManager.sharedInstance.sendMessage(text: messageField.text!, toUser: (conversation?.userID)!)
+            if let message = messageField.text {
+                conversationService?.sendMessage(text: message)
+            }
             messageField.text = ""
         }
     }
@@ -123,24 +60,38 @@ class ConversationViewController: UIViewController, UITableViewDelegate, UITable
     
     // MARK: - UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        guard let frc = conversationService?.fetchedResultsController, let sectionsCount =
+            frc.sections?.count else {
+                return 0
+        }
+        return sectionsCount
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages.count
+        guard let frc = conversationService?.fetchedResultsController, let sections = frc.sections else {
+            return 0
+        }
+        return sections[section].numberOfObjects
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var identifier: String
+        if let message = conversationService?.fetchedResultsController?.object(at: indexPath) {
+            if message.sender == conversation?.user {
+                identifier = "OutputMessage"
+            } else {
+                identifier = "InputMessage"
+            }
+            if let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? ConversationCell{
+                if let message = conversationService?.fetchedResultsController?.object(at: indexPath) {
+                    cell.fillWithModel(model: message)
+                }
+                return cell
+            }
+        }
         
-        let cell = messages[indexPath.row].isInputMessage! ?
-            tableView.dequeueReusableCell(withIdentifier: "InputMessage", for: indexPath) as! ConversationCell :
-            tableView.dequeueReusableCell(withIdentifier: "OutputMessage", for: indexPath) as! ConversationCell
-        
-        cell.fillWithModel(model: messages[indexPath.row])
-        
-        return cell
+        return ConversationCell()
     }
-    
     
     //MARK: - Keyboard
     func registerForKeyboardNotifications() {
@@ -159,9 +110,7 @@ class ConversationViewController: UIViewController, UITableViewDelegate, UITable
             self.constraintForKeyboard.constant = keyboardSize.height
         }, completion: nil)
         
-        if self.messages.count != 0 {
-            tableView.scrollToRow(at: NSIndexPath.init(row: self.messages.count - 1, section: 0) as IndexPath, at: .top, animated: true)
-        }
+        scrollToBottom()
     }
     
     func keyboardWillHide(notification: NSNotification){
@@ -172,5 +121,14 @@ class ConversationViewController: UIViewController, UITableViewDelegate, UITable
         UIView.animateKeyframes(withDuration: duration, delay: 0, options: UIViewKeyframeAnimationOptions(rawValue: curve), animations: {
             self.constraintForKeyboard.constant = 0
         }, completion: nil)
+    }
+    
+    func scrollToBottom() {
+        if let lastMessage = conversationService?.fetchedResultsController?.fetchedObjects?.last {
+            if let lastIndexPatch = conversationService?.fetchedResultsController?.indexPath(forObject: lastMessage) {
+                tableView.scrollToRow(at: lastIndexPatch, at: .bottom, animated: true)
+            }
+        }
+
     }
 }

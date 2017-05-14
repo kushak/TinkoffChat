@@ -8,29 +8,56 @@
 
 import UIKit
 
-protocol UserProfileStorage: class {
-    func saveUser(user: UserProfile, completed: @escaping () -> (), failure: @escaping ()->())
-    func getUser(completed: @escaping (_ name: String, _ aboutMe: String?, _ image: Data, _ textColor: NSString) -> ())
-}
-
-class StorageService: NSObject, UserProfileStorage {
-
-    func saveUser(user: UserProfile, completed: @escaping () -> (), failure: @escaping ()->()) {
-        GCDDataManager.saveFile(name: user.userName,
-                                aboutMe: user.descriptionUser,
-                                image: UIImagePNGRepresentation(user.userImage!)!,
-                                colorText: user.textColor as String,
-                                completed: {
-                                    completed()
-        }) {
-            failure()
-        }
-    }
-    
-    func getUser(completed: @escaping (_ name: String, _ aboutMe: String?, _ image: Data, _ textColor: NSString) -> ()) {
-        GCDDataManager.getFile { (name, aboutMe, imageData, textColor) in
-            completed(name, aboutMe, imageData, textColor)
-        }
-    }
+class StorageService: NSObject {
+//    
+//    let coreDataStack: CoreDataStack = (UIApplication.shared.delegate as! AppDelegate).coreDataStack
+//    let multipeerCommunicator = MultipeerCommunicator()
+//    
+//    override init() {
+//        super.init()
+//        multipeerCommunicator.delegate = self
+//    }
+//    
+//    //discovering
+//    func didFoundUser(userID: String, userName: String) {
+//        print("FOUND \(userID)")
+//        if let user = User.findOrInsertUser(id: userID, in: coreDataStack.saveContext!) {
+//            user.isOnline = true
+//            user.name = userName
+//            user.userId = userID
+//            user.conversation?.isOnline = true
+//            coreDataStack.performSave(context: coreDataStack.saveContext!, completionHandler: nil)
+//            print("AND SAVE")
+//        }
+//    }
+//    
+//    func didLostUser(userID: String) {
+//        print("LOST \(userID)")
+//        if let user = User.findOrInsertUser(id: userID, in: coreDataStack.saveContext!) {
+//            user.isOnline = false
+//            user.conversation?.isOnline = false
+//            coreDataStack.performSave(context: coreDataStack.saveContext!, completionHandler: nil)
+//            print("AND SAVE")
+//        }
+//    }
+//    
+//    //errors
+//    func failedToStartBrowsingForUsers(error: Error) {
+//        print(#function)
+//    }
+//    func failedToStartAdvertising(error: Error) {
+//        print(#function)
+//    }
+//    
+//    //messages
+//    func didReceiveMessage(text: String, fromUser: String, toUser: String) {
+//        if let user = User.findOrInsertUser(id: fromUser, in: coreDataStack.saveContext!) {
+//            user.isOnline = true
+//            if let message = Message1.insertMessage(text: text, conversation: user.conversation, in: coreDataStack.saveContext!) {
+//                user.addToOutgoingMessages(message)
+//            }
+//            coreDataStack.performSave(context: coreDataStack.saveContext!, completionHandler: nil)
+//        }
+//    }
 }
 
