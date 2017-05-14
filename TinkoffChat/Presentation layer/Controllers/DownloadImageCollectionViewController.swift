@@ -14,7 +14,7 @@ protocol DownloadImageCollectionViewControllerDelegate {
     func setImage(imageToShow: UIImage)
 }
 
-class DownloadImageCollectionViewController: UICollectionViewController {
+class DownloadImageCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var delegate: DownloadImageCollectionViewControllerDelegate?
     let imageModel = ImageModel(imageService: ImageService(requestSender: RequestSender()))
@@ -24,7 +24,7 @@ class DownloadImageCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         imageModel.fetchImage(completionHandler: { [unowned self] _ in
             self.dataSource = self.imageModel.imageShow
-            
+            print(self.dataSource.count)
             DispatchQueue.main.async {
                 self.collectionView?.reloadData()
             }
@@ -33,7 +33,7 @@ class DownloadImageCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 0
+        return 1
     }
 
 
@@ -64,6 +64,15 @@ class DownloadImageCollectionViewController: UICollectionViewController {
         let image = (collectionView.cellForItem(at: indexPath) as! ImageCollectionViewCell).image.image
         delegate?.setImage(imageToShow: image!)
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: UICollectionViewDelegateFlowLayout
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width = collectionView.bounds.width / 3 - 3
+        let height = width
+        
+        return CGSize(width: width, height: height)
     }
 
 }
