@@ -152,8 +152,10 @@ extension MultipeerCommunicator : MCSessionDelegate {
         let recievedData = try! JSONSerialization.jsonObject(with: data, options: []) as! [String:String]
 //        let fromUser = peersDictionary[peerID.displayName]?.userName
 //        delegate?.didReceiveMessage(text: recievedData["text"]!, fromUser: fromUser!, toUser: myPeerID.displayName)
-        delegate?.didReceiveMessage(text: recievedData["text"]!, fromUser: peerID.displayName, toUser: myPeerID.displayName)
-        print("didRecieveData \(recievedData["text"]!)")
+        if let text = recievedData["text"] {
+            delegate?.didReceiveMessage(text: text, fromUser: peerID.displayName, toUser: myPeerID.displayName)
+            print("didRecieveData \(text)")
+        }
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {

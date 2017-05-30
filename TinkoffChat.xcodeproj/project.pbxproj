@@ -17,6 +17,8 @@
 		CE2710391E8F654E0077850D /* MessageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2710381E8F654E0077850D /* MessageLabel.swift */; };
 		CE27103D1E8F85180077850D /* GCDDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27103C1E8F85180077850D /* GCDDataManager.swift */; };
 		CE27103F1E8F8DEB0077850D /* User.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE27103E1E8F8DEB0077850D /* User.plist */; };
+		CE305E2E1ED89434003C34D3 /* Factorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE305E2D1ED89434003C34D3 /* Factorial.swift */; };
+		CE305E301ED89485003C34D3 /* FactorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE305E2F1ED89485003C34D3 /* FactorialTests.swift */; };
 		CE3B744F1EB3B22900985397 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B744E1EB3B22900985397 /* CoreDataStack.swift */; };
 		CE3B74511EB3C6EE00985397 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B74501EB3C6EE00985397 /* AppUser.swift */; };
 		CE47E4E41E686DE8003F8B70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47E4E31E686DE8003F8B70 /* ViewController.swift */; };
@@ -43,6 +45,7 @@
 		CE972BCB1E87C9C00000DFC5 /* ConversationCellConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE972BCA1E87C9C00000DFC5 /* ConversationCellConfiguration.swift */; };
 		CE972BCD1E87CA7E0000DFC5 /* ConversationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE972BCC1E87CA7E0000DFC5 /* ConversationListCell.swift */; };
 		CE972BCF1E87E20A0000DFC5 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE972BCE1E87E20A0000DFC5 /* Conversation.swift */; };
+		CE9A70691EDE08C1004CBDF6 /* Emitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A70681EDE08C1004CBDF6 /* Emitter.swift */; };
 		CEADA9D01EC708A400FCE21E /* ConversationsListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEADA9CF1EC708A400FCE21E /* ConversationsListService.swift */; };
 		CEADA9D41EC71F8C00FCE21E /* Message1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEADA9D31EC71F8C00FCE21E /* Message1.swift */; };
 		CEADA9D61EC765E300FCE21E /* ConversationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEADA9D51EC765E300FCE21E /* ConversationService.swift */; };
@@ -71,6 +74,8 @@
 		CE2710381E8F654E0077850D /* MessageLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageLabel.swift; sourceTree = "<group>"; };
 		CE27103C1E8F85180077850D /* GCDDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDDataManager.swift; sourceTree = "<group>"; };
 		CE27103E1E8F8DEB0077850D /* User.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = User.plist; sourceTree = "<group>"; };
+		CE305E2D1ED89434003C34D3 /* Factorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Factorial.swift; sourceTree = "<group>"; };
+		CE305E2F1ED89485003C34D3 /* FactorialTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactorialTests.swift; sourceTree = "<group>"; };
 		CE3B744E1EB3B22900985397 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		CE3B74501EB3C6EE00985397 /* AppUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		CE47E4DE1E686DE8003F8B70 /* TinkoffChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinkoffChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +107,7 @@
 		CE972BCA1E87C9C00000DFC5 /* ConversationCellConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationCellConfiguration.swift; sourceTree = "<group>"; };
 		CE972BCC1E87CA7E0000DFC5 /* ConversationListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationListCell.swift; sourceTree = "<group>"; };
 		CE972BCE1E87E20A0000DFC5 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		CE9A70681EDE08C1004CBDF6 /* Emitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emitter.swift; sourceTree = "<group>"; };
 		CEADA9CF1EC708A400FCE21E /* ConversationsListService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConversationsListService.swift; path = "Service layer/ConversationsListService.swift"; sourceTree = "<group>"; };
 		CEADA9D31EC71F8C00FCE21E /* Message1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message1.swift; sourceTree = "<group>"; };
 		CEADA9D51EC765E300FCE21E /* ConversationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConversationService.swift; path = "Service layer/ConversationService.swift"; sourceTree = "<group>"; };
@@ -153,6 +159,7 @@
 				CE8125C41EB4806F008C5FE6 /* User.swift */,
 				CEADA9D31EC71F8C00FCE21E /* Message1.swift */,
 				CE80CDCC1EC8E40D00258497 /* ImageModel.swift */,
+				CE9A70681EDE08C1004CBDF6 /* Emitter.swift */,
 			);
 			name = Models;
 			path = "Presentation layer/Models";
@@ -186,6 +193,7 @@
 				CE972BC91E87C8B60000DFC5 /* SuportFiles */,
 				CE47E4F01E686DEA003F8B70 /* Info.plist */,
 				CE8125CA1EB49DFB008C5FE6 /* TinkoffChat.xcdatamodeld */,
+				CE305E2D1ED89434003C34D3 /* Factorial.swift */,
 			);
 			path = TinkoffChat;
 			sourceTree = "<group>";
@@ -195,6 +203,7 @@
 			children = (
 				CE47E4F91E686DEC003F8B70 /* TinkoffChatTests.swift */,
 				CE47E4FB1E686DEC003F8B70 /* Info.plist */,
+				CE305E2F1ED89485003C34D3 /* FactorialTests.swift */,
 			);
 			path = TinkoffChatTests;
 			sourceTree = "<group>";
@@ -398,6 +407,7 @@
 				CE27102F1E8969F90077850D /* ConversationViewController.swift in Sources */,
 				CE972BCD1E87CA7E0000DFC5 /* ConversationListCell.swift in Sources */,
 				CE27103D1E8F85180077850D /* GCDDataManager.swift in Sources */,
+				CE9A70691EDE08C1004CBDF6 /* Emitter.swift in Sources */,
 				CE80CDCB1EC8E27C00258497 /* DownloadImageCollectionViewController.swift in Sources */,
 				CEADA9D01EC708A400FCE21E /* ConversationsListService.swift in Sources */,
 				CE8125C51EB4806F008C5FE6 /* User.swift in Sources */,
@@ -417,6 +427,7 @@
 				CE6DB3EF1E98B7D4008DBF59 /* MultipeerCommunicator.swift in Sources */,
 				CE80CDD81EC8E63600258497 /* RequestSender.swift in Sources */,
 				CEADA9D61EC765E300FCE21E /* ConversationService.swift in Sources */,
+				CE305E2E1ED89434003C34D3 /* Factorial.swift in Sources */,
 				CE2710391E8F654E0077850D /* MessageLabel.swift in Sources */,
 				CE80CDCD1EC8E40D00258497 /* ImageModel.swift in Sources */,
 				CE2710351E8974690077850D /* ConversationCell.swift in Sources */,
@@ -431,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE47E4FA1E686DEC003F8B70 /* TinkoffChatTests.swift in Sources */,
+				CE305E301ED89485003C34D3 /* FactorialTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,13 +8,22 @@
 
 import UIKit
 
-class ConverstionListTableViewController: UITableViewController {
+class ConverstionListTableViewController: UITableViewController, ConversationsListServiceDelegate {
     
     var conversationListService: ConversationsListService?
+    var conversationViewController: ConversationViewController?
+    var emitter: Emitter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         conversationListService = ConversationsListService(tableView: tableView)
+        conversationListService?.delegate = self
+        emitter = Emitter(view: view)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        conversationViewController = nil
     }
 
 
@@ -62,7 +71,16 @@ class ConverstionListTableViewController: UITableViewController {
         if let vc = UIStoryboard.init(name: "Conversation", bundle: nil).instantiateViewController(withIdentifier: "Conversation") as? ConversationViewController {
             let conversation = conversationListService?.fetchedResultsController?.object(at: indexPath)
             vc.conversation = conversation
+            conversationViewController = vc
             show(vc, sender: nil)
+        }
+    }
+    
+    func userChangeOnlineStatus(conversation: Conversation1, isOnline: Bool) {
+        if conversationViewController != nil {
+            if conversationViewController?.conversation == conversation {
+                conversationViewController?.setOnlineStatus(isOnline: isOnline)
+            }
         }
     }
 }

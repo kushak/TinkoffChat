@@ -21,6 +21,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
     
     var user: User?
     var appUser: AppUser?
+    var emitter: Emitter?
     
     func initViews(for user: User) {
         
@@ -33,7 +34,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.onTapAction))
         self.view.addGestureRecognizer(tapGesture);
         
-        
+        emitter = Emitter(view: view)
         
         self.userName.delegate = self
         self.aboutUser.delegate = self

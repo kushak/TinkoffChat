@@ -19,9 +19,11 @@ class DownloadImageCollectionViewController: UICollectionViewController, UIColle
     var delegate: DownloadImageCollectionViewControllerDelegate?
     let imageModel = ImageModel(imageService: ImageService(requestSender: RequestSender()))
     var dataSource = [ImageApiModel]()
+    var emitter: Emitter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emitter = Emitter(view: view)
         imageModel.fetchImage(completionHandler: { [unowned self] _ in
             self.dataSource = self.imageModel.imageShow
             print(self.dataSource.count)

@@ -12,6 +12,7 @@ class ConversationViewController: UIViewController, UITableViewDelegate, UITable
     var conversation: Conversation1?
 //    var messages = [Message]()
     var conversationService: ConversationService?
+    var emitter: Emitter?
 
     @IBOutlet weak var messageField: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -28,6 +29,7 @@ class ConversationViewController: UIViewController, UITableViewDelegate, UITable
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.onTapAction))
         self.view.addGestureRecognizer(tapGesture);
+        emitter = Emitter(view: view)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,6 +57,25 @@ class ConversationViewController: UIViewController, UITableViewDelegate, UITable
     //MARK: - UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField.text == "" {
+            sendButton.isEnabled = false
+        } else if (conversation?.isOnline)! {
+            sendButton.isEnabled = true
+            UIView.animate(withDuration: 0.5, animations: {
+                self.sendButton.tintColor = UIColor.init(red: 0.22, green: 0.33, blue: 0.53, alpha: 1)
+                self.sendButton.transform = CGAffineTransform(scaleX: 1.15, y: 1.15)
+            }, completion: { (true) in
+                
+                self.sendButton.transform = CGAffineTransform(scaleX: 1, y: 1)
+            })  
+        
+        }
+        
         return true
     }
     
@@ -130,5 +151,25 @@ class ConversationViewController: UIViewController, UITableViewDelegate, UITable
             }
         }
 
+    }
+    
+    func setOnlineStatus(isOnline: Bool) {
+        conversation?.isOnline = isOnline
+        if isOnline {
+            userOnlineAnimated()
+        } else {
+            userOfflineAnimated()
+        }
+    }
+    
+    func userOnlineAnimated() {
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.green,
+                                                                   NSFontAttributeName: UIFont.systemFont(ofSize: 20)]
+    }
+    
+    func userOfflineAnimated() {
+        UIView.animate(withDuration: 1) {
+            self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.black]
+        }
     }
 }

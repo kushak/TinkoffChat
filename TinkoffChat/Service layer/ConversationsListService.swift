@@ -9,11 +9,16 @@
 import UIKit
 import CoreData
 
+protocol ConversationsListServiceDelegate: class {
+    func userChangeOnlineStatus(conversation: Conversation1, isOnline: Bool)
+}
+
 class ConversationsListService: NSObject {
     
     let fetchedResultsController: NSFetchedResultsController<Conversation1>?
     let tableView: UITableView
     let coreDataStack: CoreDataStack = (UIApplication.shared.delegate as! AppDelegate).coreDataStack
+    var delegate: ConversationsListServiceDelegate?
     
     init(tableView: UITableView) {
         self.tableView = tableView
@@ -71,6 +76,14 @@ extension ConversationsListService: NSFetchedResultsControllerDelegate {
             
             if let newIndexPath = newIndexPath {
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+            if let conversation = fetchedResultsController?.object(at: indexPath!) {
+                
+                if indexPath?.section == 0 && newIndexPath?.section == 1 {
+                    delegate?.userChangeOnlineStatus(conversation: conversation, isOnline: false)
+                } else if indexPath?.section == 1 && newIndexPath?.section == 0 {
+                    delegate?.userChangeOnlineStatus(conversation: conversation, isOnline: true)
+                }
             }
         case .update:
             if let indexPath = indexPath {
